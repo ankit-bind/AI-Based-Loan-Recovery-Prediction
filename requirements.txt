@@ -1,0 +1,22 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+tensorflow
+keras
+jupyterlab
+notebook
+scipy
+statsmodels
+xgboost
+lightgbm
+catboost
+plotly
+dash
+bokeh
+flask
+django
+requests
+beautifulsoup4
+-e . 
