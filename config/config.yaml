@@ -1,0 +1,71 @@
+# Loan Recovery Prediction — Central Configuration
+# ======================================================
+
+# ── Data paths ───────────────────────────────────────
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  files:
+    application_train: "data/raw/application_train.csv"
+    bureau: "data/raw/bureau.csv"
+    previous_application: "data/raw/previous_application.csv"
+    installments: "data/raw/installments_payments.csv"
+    pos_cash: "data/raw/POS_CASH_balance.csv"
+
+# ── Artifacts directories ──────────────────────────
+artifacts:
+  data_ingestion:
+    root_dir: "artifacts/data_ingestion"
+    raw_data: "artifacts/data_ingestion/raw.csv"
+    train_data: "artifacts/data_ingestion/train.csv"
+    test_data: "artifacts/data_ingestion/test.csv"
+  data_validation:
+    root_dir: "artifacts/data_validation"
+    report: "artifacts/data_validation/validation_report.json"
+    status: "artifacts/data_validation/status.txt"
+  data_transformation:
+    root_dir: "artifacts/data_transformation"
+    preprocessor: "artifacts/data_transformation/preprocessor.pkl"
+    train_arr: "artifacts/data_transformation/train_arr.npy"
+    test_arr: "artifacts/data_transformation/test_arr.npy"
+  model_trainer:
+    root_dir: "artifacts/model_trainer"
+    trained_model: "artifacts/model_trainer/trained_model.pkl"
+    metrics: "artifacts/model_trainer/metrics.json"
+    comparison: "artifacts/model_trainer/model_comparison.json"
+    comparison_csv: "artifacts/model_trainer/model_comparison.csv"
+    classification_report: "artifacts/model_trainer/classification_report.json"
+    feature_importance: "artifacts/model_trainer/feature_importance.csv"
+    roc_curve: "artifacts/model_trainer/roc_curve.png"
+    confusion_matrix: "artifacts/model_trainer/confusion_matrix.png"
+    pr_curve: "artifacts/model_trainer/pr_curve.png"
+  model_evaluation:
+    root_dir: "artifacts/model_evaluation"
+    report: "artifacts/model_evaluation/eval_report.json"
+    roc_curve: "artifacts/model_evaluation/roc_curve.png"
+    confusion_matrix: "artifacts/model_evaluation/confusion_matrix.png"
+    pr_curve: "artifacts/model_evaluation/pr_curve.png"
+    feature_importance: "artifacts/model_evaluation/feature_importance.png"
+
+# ── Model artifacts ──────────────────────────────────
+models:
+  root_dir: "models"
+  best_model: "models/best_model.pkl"
+  preprocessor: "models/preprocessor.pkl"
+  threshold: "models/threshold.pkl"
+  feature_names: "models/feature_names.json"
+  all_models: "models/all_models/"
+
+# ── Logging ──────────────────────────────────────────
+logging:
+  log_dir: "logs"
+
+# ── Reports ──────────────────────────────────────────
+reports:
+  root_dir: "reports"
+
+# ── Explainability ───────────────────────────────────
+explainability:
+  root_dir: "reports/explainability"
+  summary_plot: "reports/explainability/shap_summary.png"
+  waterfall_plot: "reports/explainability/shap_waterfall.png"

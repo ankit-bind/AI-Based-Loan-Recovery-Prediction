@@ -1,0 +1,127 @@
+# ============================================================
+# LOAN RECOVERY PROJECT — DATA SCHEMA
+# ============================================================
+
+# ── TARGET ──────────────────────────────────────────────────
+target_column: "TARGET"
+recovered_column: "recovered"
+
+# ── ID COLUMNS ──────────────────────────────────────────────
+id_columns:
+  - "SK_ID_CURR"
+
+# ── NUMERICAL COLUMNS ───────────────────────────────────────
+numerical_columns:
+  # Financial
+  - "AMT_CREDIT"
+  - "AMT_ANNUITY"
+  - "AMT_INCOME_TOTAL"
+  - "AMT_GOODS_PRICE"
+  # Personal
+  - "CNT_CHILDREN"
+  - "CNT_FAM_MEMBERS"
+  - "DAYS_BIRTH"
+  - "DAYS_EMPLOYED"
+  - "DAYS_REGISTRATION"
+  - "DAYS_ID_PUBLISH"
+  # Car age
+  - "OWN_CAR_AGE"
+  # Credit scores
+  - "EXT_SOURCE_1"
+  - "EXT_SOURCE_2"
+  - "EXT_SOURCE_3"
+  # Region
+  - "REGION_RATING_CLIENT"
+  - "REGION_POPULATION_RELATIVE"
+  # Social
+  - "DEF_30_CNT_SOCIAL_CIRCLE"
+  - "DEF_60_CNT_SOCIAL_CIRCLE"
+  # Bureau enquiries
+  - "AMT_REQ_CREDIT_BUREAU_HOUR"
+  - "AMT_REQ_CREDIT_BUREAU_DAY"
+  - "AMT_REQ_CREDIT_BUREAU_WEEK"
+  - "AMT_REQ_CREDIT_BUREAU_MON"
+  - "AMT_REQ_CREDIT_BUREAU_QRT"
+  - "AMT_REQ_CREDIT_BUREAU_YEAR"
+
+# ── CATEGORICAL COLUMNS ─────────────────────────────────────
+categorical_columns:
+  - "CODE_GENDER"
+  - "FLAG_OWN_CAR"
+  - "FLAG_OWN_REALTY"
+  - "NAME_CONTRACT_TYPE"
+  - "NAME_INCOME_TYPE"
+  - "NAME_EDUCATION_TYPE"
+  - "NAME_FAMILY_STATUS"
+  - "NAME_HOUSING_TYPE"
+  - "OCCUPATION_TYPE"
+  - "ORGANIZATION_TYPE"
+
+# ── BINARY COLUMNS ──────────────────────────────────────────
+binary_columns:
+  - "CODE_GENDER"
+  - "FLAG_OWN_CAR"
+  - "FLAG_OWN_REALTY"
+  - "NAME_CONTRACT_TYPE"
+  - "REG_CITY_NOT_WORK_CITY"
+  - "FLAG_WORK_PHONE"
+  - "FLAG_PHONE"
+  - "FLAG_EMAIL"
+
+# ── OHE COLUMNS ─────────────────────────────────────────────
+ohe_columns:
+  - "NAME_INCOME_TYPE"
+  - "NAME_EDUCATION_TYPE"
+  - "NAME_FAMILY_STATUS"
+  - "NAME_HOUSING_TYPE"
+
+# ── LABEL ENCODE COLUMNS ────────────────────────────────────
+label_encode_columns:
+  - "OCCUPATION_TYPE"
+  - "ORGANIZATION_TYPE"
+
+# ── DROP COLUMNS ────────────────────────────────────────────
+drop_columns:
+  - "SK_ID_CURR"
+  - "TARGET"
+
+# ── HIGH MISSING COLUMNS ────────────────────────────────────
+high_missing_columns:
+  - "OWN_CAR_AGE"
+  - "EXT_SOURCE_1"
+  - "EXT_SOURCE_3"
+
+# ── ANOMALY COLUMNS ─────────────────────────────────────────
+anomaly_columns:
+  DAYS_EMPLOYED:
+    anomaly_value: 365243
+    replace_with: null
+
+# ── ENGINEERED FEATURES ─────────────────────────────────────
+engineered_features:
+  - "AGE_YEARS"
+  - "EMPLOYMENT_YEARS"
+  - "DAYS_EMPLOYED_ANOMALY"
+  - "HAS_COLLATERAL"
+  - "EXT_SOURCE_MEAN"
+  - "EXT_SOURCE_STD"
+  - "EXT_SOURCE_1_MISSING"
+  - "CREDIT_INCOME_RATIO"
+  - "ANNUITY_INCOME_RATIO"
+  - "CREDIT_GOODS_RATIO"
+  - "CREDIT_ANNUITY_RATIO"
+  - "TOTAL_DOCUMENTS_SUBMITTED"
+  - "TOTAL_INQUIRIES"
+  - "RECENT_INQUIRY_RATIO"
+
+# ── VALIDATION RULES ────────────────────────────────────────
+validation:
+  min_rows: 1000
+  max_missing_pct: 0.80
+  required_columns:
+    - "SK_ID_CURR"
+    - "TARGET"
+    - "AMT_CREDIT"
+    - "AMT_INCOME_TOTAL"
+    - "EXT_SOURCE_2"
+    - "EXT_SOURCE_3"
