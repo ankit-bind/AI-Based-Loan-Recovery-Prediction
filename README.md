@@ -81,7 +81,7 @@ Without knowing *which loans are likely to recover*, collection teams work blind
 
 The Streamlit app has **7 pages** accessible from the sidebar:
 
-### 🏠 Home (`app.py`)
+### 🏠 Home (`Home.py`)
 Landing page with navigation cards to all modules and a full platform overview — including problem statement, solution walkthrough, capabilities, target audience, and tech stack.
 
 ![Home Page](assets/screenshots/home.png)
@@ -308,7 +308,7 @@ The pipeline is orchestrated through `main.py` → `TrainingPipeline` and runs t
 ```
 AI-Based-Loan-Recovery-Prediction/
 │
-├── app.py                          # Streamlit home page
+├── Home.py                         # Streamlit home page
 ├── main.py                         # Training pipeline entry point
 ├── setup.py                        # Package setup
 ├── requirements.txt                # Python dependencies
@@ -437,7 +437,7 @@ This will execute all pipeline stages and populate `artifacts/` and `models/`.
 ## Running the App
 
 ```bash
-python -m streamlit run app.py
+python -m streamlit run Home.py
 ```
 
 The dashboard will open at `http://localhost:8501`.

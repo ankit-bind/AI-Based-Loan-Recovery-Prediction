@@ -47,8 +47,8 @@ class PredictPipeline:
                     f"{e}\n\n"
                     "LightGBM not found in current Python environment.\n"
                     "Please run Streamlit through your virtual environment:\n"
-                    "  myenv\\Scripts\\python.exe -m streamlit run app.py\n"
-                    "Do NOT use: streamlit run app.py"
+                    "  myenv\\Scripts\\python.exe -m streamlit run Home.py\n"
+                    "Do NOT use: streamlit run Home.py"
                 ) from e
 
             # ── Load threshold ──
