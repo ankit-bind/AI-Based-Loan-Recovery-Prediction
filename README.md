@@ -63,7 +63,7 @@ Without knowing *which loans are likely to recover*, collection teams work blind
 
 The Streamlit app has **7 pages** accessible from the sidebar:
 
-### 🏠 Home (`Home.py`)
+### 🏠 Home (`app.py`)
 Landing page with navigation cards to all modules and a full platform overview — including problem statement, solution walkthrough, capabilities, target audience, and tech stack.
 
 ![Home Page](assets/screenshots/home.png)
@@ -290,7 +290,7 @@ The pipeline is orchestrated through `main.py` → `TrainingPipeline` and runs t
 ```
 AI-Based-Loan-Recovery-Prediction/
 │
-├── Home.py                         # Streamlit home page
+├── app.py                          # Streamlit home page
 ├── main.py                         # Training pipeline entry point
 ├── setup.py                        # Package setup
 ├── requirements.txt                # Python dependencies
@@ -418,17 +418,11 @@ This will execute all pipeline stages and populate `artifacts/` and `models/`.
 
 ## Running the App
 
-### Local Development
 ```bash
-python -m streamlit run Home.py
+python -m streamlit run app.py
 ```
 
-The dashboard will open at `http://localhost:8501` with the sidebar showing **"Home"** as the first page.
-
-### Streamlit Cloud
-The app is configured for [Streamlit Cloud](https://streamlit.io/cloud) deployment and will automatically use `app.py` as the entry point.
-
-**Live Demo:** https://loan-recovery-prediction.streamlit.app
+The dashboard will open at `http://localhost:8501`.
 
 > **Pre-trained model required:** The dashboard reads from `models/best_model.pkl` and `artifacts/model_evaluation/eval_report.json`. Run `python main.py` first to generate these files, or use pre-trained artifacts if provided.
 
