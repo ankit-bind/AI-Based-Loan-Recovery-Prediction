@@ -32,6 +32,24 @@ The system is deployed as a **multi-page Streamlit web application** with suppor
 
 ---
 
+## 🖼️ Dashboard Preview
+
+| Home Page | Portfolio Overview | Single Borrower |
+|:---------:|:------------------:|:---------------:|
+| ![Home](assets/screenshots/home.png) | ![Portfolio](assets/screenshots/portfolio.png) | ![Single Borrower](assets/screenshots/single_borrower.png) |
+
+| Portfolio Analysis | Model Health | Decision Intelligence |
+|:------------------:|:------------:|:---------------------:|
+| ![Portfolio Analysis](assets/screenshots/portfolio_analysis.png) | ![Model Health](assets/screenshots/model_health.png) | ![Decision Intelligence](assets/screenshots/decision_intelligence.png) |
+
+| Strategy Config |
+|:---------------:|
+| ![Strategy Config](assets/screenshots/strategy_config.png) |
+
+> **Note:** Place your screenshots in `assets/screenshots/` with the exact filenames shown above.
+
+---
+
 ## Problem Statement
 
 Financial institutions manage thousands of delinquent loans with limited recovery staff. Traditional collection strategies rely on manual review and generic rule-based scoring, which leads to:
@@ -66,8 +84,12 @@ The Streamlit app has **7 pages** accessible from the sidebar:
 ### 🏠 Home (`app.py`)
 Landing page with navigation cards to all modules and a full platform overview — including problem statement, solution walkthrough, capabilities, target audience, and tech stack.
 
+![Home Page](assets/screenshots/home.png)
+
 ### 📊 Portfolio (`1_Portfolio.py`)
 Executive banking overview. Displays real-time portfolio health metrics: total borrowers, recovery rate, default rate, critical account count, and AI-generated insights. Top critical accounts are surfaced automatically with one-click actions.
+
+![Portfolio](assets/screenshots/portfolio.png)
 
 ### 👤 Single Borrower (`2_Single_Borrower.py`)
 Enter a borrower's financial profile and receive an instant recovery probability assessment. Outputs a borrower intelligence card showing:
@@ -77,11 +99,17 @@ Enter a borrower's financial profile and receive an instant recovery probability
 - Confidence level
 - Recommended next action (Escalate / Call / Review / Continue)
 
+![Single Borrower](assets/screenshots/single_borrower.png)
+
 ### 📁 Portfolio Analysis (`3_Portfolio_Analysis.py`)
 Upload a CSV of loan accounts and process up to **10,000 borrowers** in a single batch. Results are risk-sorted with critical accounts flagged first. Downloadable reports are generated with all predictions and risk tiers.
 
+![Portfolio Analysis](assets/screenshots/portfolio_analysis.png)
+
 ### 🩺 Model Health (`4_Model_Health.py`)
 Live model performance monitoring. Tracks ROC-AUC, Precision, Recall, and F1 metrics against baseline benchmarks. Compares LightGBM vs XGBoost and displays confusion matrices with False Negative highlighting.
+
+![Model Health](assets/screenshots/model_health.png)
 
 ### 🔍 Decision Intelligence (`5_Decision_Intelligence.py`)
 SHAP-powered explainability dashboard. Includes:
@@ -89,6 +117,8 @@ SHAP-powered explainability dashboard. Includes:
 - Bar charts for top contributing features
 - Waterfall breakdowns per prediction
 - Regulatory-grade audit log entries
+
+![Decision Intelligence](assets/screenshots/decision_intelligence.png)
 
 ### ⚙️ Strategy Config (`6_Strategy_Config.py`)
 Interactive business strategy simulator. Adjust the recovery threshold with a live slider and see real-time impact on:
@@ -99,6 +129,8 @@ Interactive business strategy simulator. Adjust the recovery threshold with a li
 - Cost per recovered account
 
 Strategies: **Aggressive** (threshold ≤ 0.15) · **Balanced** (0.15–0.30) · **Conservative** (> 0.30)
+
+![Strategy Config](assets/screenshots/strategy_config.png)
 
 ### ℹ️ About (`7_About.py`)
 Full project documentation page covering the problem, goals, dataset, 8-step workflow, tech stack, and author details.
@@ -328,6 +360,9 @@ AI-Based-Loan-Recovery-Prediction/
 │   ├── components.py               # Reusable UI components
 │   ├── charts.py                   # Plotly chart builders
 │   └── insights.py                 # AI insight generators
+│
+├── assets/                         # Screenshots and media
+│   └── screenshots/                # Dashboard page screenshots for README
 │
 ├── artifacts/                      # Pipeline stage outputs (auto-generated)
 │   ├── data_ingestion/
