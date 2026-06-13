@@ -418,11 +418,17 @@ This will execute all pipeline stages and populate `artifacts/` and `models/`.
 
 ## Running the App
 
+### Local Development
 ```bash
 python -m streamlit run Home.py
 ```
 
-The dashboard will open at `http://localhost:8501`.
+The dashboard will open at `http://localhost:8501` with the sidebar showing **"Home"** as the first page.
+
+### Streamlit Cloud
+The app is configured for [Streamlit Cloud](https://streamlit.io/cloud) deployment and will automatically use `app.py` as the entry point.
+
+**Live Demo:** https://loan-recovery-prediction.streamlit.app
 
 > **Pre-trained model required:** The dashboard reads from `models/best_model.pkl` and `artifacts/model_evaluation/eval_report.json`. Run `python main.py` first to generate these files, or use pre-trained artifacts if provided.
 
