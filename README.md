@@ -30,25 +30,7 @@
 
 The system is deployed as a **multi-page Streamlit web application** with support for single-borrower assessment, batch portfolio processing (up to 10,000 rows), model health monitoring, SHAP-based explainability, and interactive business strategy simulation.
 
----
 
-## 🖼️ Dashboard Preview
-
-| Home Page | Portfolio Overview | Single Borrower |
-|:---------:|:------------------:|:---------------:|
-| ![Home](assets/screenshots/home.png) | ![Portfolio](assets/screenshots/portfolio.png) | ![Single Borrower](assets/screenshots/single_borrower.png) |
-
-| Portfolio Analysis | Model Health | Decision Intelligence |
-|:------------------:|:------------:|:---------------------:|
-| ![Portfolio Analysis](assets/screenshots/portfolio_analysis.png) | ![Model Health](assets/screenshots/model_health.png) | ![Decision Intelligence](assets/screenshots/decision_intelligence.png) |
-
-| Strategy Config |
-|:---------------:|
-| ![Strategy Config](assets/screenshots/strategy_config.png) |
-
-> **Note:** Place your screenshots in `assets/screenshots/` with the exact filenames shown above.
-
----
 
 ## Problem Statement
 
